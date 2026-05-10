@@ -14,6 +14,55 @@ p4 = P4
 st.set_page_config(page_title="For Shreya 🤍", page_icon="🤍", layout="wide", initial_sidebar_state="collapsed")
 
 st.markdown("""
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+// MAP — SRM Arts & Science College, Trichy
+const map = L.map('ourMap', { zoomControl:true, scrollWheelZoom:false }).setView([10.8924, 78.8537], 17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution:'© OpenStreetMap',
+  maxZoom:19
+}).addTo(map);
+
+function makeIcon(emoji) {
+  return L.divIcon({
+    html:`<div style="font-size:28px;line-height:1;filter:drop-shadow(0 2px 6px rgba(180,80,160,0.4))">${emoji}</div>`,
+    iconSize:[36,36], iconAnchor:[18,18], popupAnchor:[0,-20],
+    className:''
+  });
+}
+
+const places = [
+  { lat:10.8926, lng:78.8534, icon:'🚌', title:'Bus Stop', desc:'Where I first talked to you. Aug 17 will never leave my head.' },
+  { lat:10.8921, lng:78.8540, icon:'📚', title:'Central Library', desc:'Our place. Just us, in the quiet. That was always enough.' },
+  { lat:10.8929, lng:78.8542, icon:'🍴', title:'Arts Canteen', desc:'Our first photo together. August 17.' },
+  { lat:10.8923, lng:78.8530, icon:'🏪', title:'Departmental Store', desc:'"We can buy this biryani!" — Every. Single. Time. 😄' },
+  { lat:10.8918, lng:78.8538, icon:'💕', title:'SRM Arts & Science', desc:'Where fate decided to put us in the same place at the same time.' },
+];
+
+places.forEach(p => {
+  L.marker([p.lat, p.lng], {icon: makeIcon(p.icon)})
+    .addTo(map)
+    .bindPopup(`<b style="font-family:serif;font-size:15px">${p.icon} ${p.title}</b><br><span style="font-style:italic;color:#9070a0;font-size:13px">${p.desc}</span>`, {maxWidth:220});
+});
+
+// SECRET PASSWORD
+function checkSecret() {
+  const val = document.getElementById('secretInput').value.trim().toLowerCase();
+  const wrong = document.getElementById('wrongMsg');
+  const reveal = document.getElementById('secretReveal');
+  if(val === 'alagi') {
+    wrong.classList.remove('show');
+    reveal.classList.add('open');
+    document.getElementById('secretInput').disabled = true;
+  } else {
+    wrong.classList.add('show');
+    document.getElementById('secretInput').value = '';
+    setTimeout(()=>wrong.classList.remove('show'), 2500);
+  }
+}
+document.getElementById('secretInput').addEventListener('keydown', e => { if(e.key==='Enter') checkSecret(); });
+
+</script>
 <style>
 #MainMenu, header, footer { visibility: hidden !important; }
 .block-container { padding: 0 !important; max-width: 100% !important; }
@@ -31,6 +80,55 @@ html = """
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+// MAP — SRM Arts & Science College, Trichy
+const map = L.map('ourMap', { zoomControl:true, scrollWheelZoom:false }).setView([10.8924, 78.8537], 17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution:'© OpenStreetMap',
+  maxZoom:19
+}).addTo(map);
+
+function makeIcon(emoji) {
+  return L.divIcon({
+    html:`<div style="font-size:28px;line-height:1;filter:drop-shadow(0 2px 6px rgba(180,80,160,0.4))">${emoji}</div>`,
+    iconSize:[36,36], iconAnchor:[18,18], popupAnchor:[0,-20],
+    className:''
+  });
+}
+
+const places = [
+  { lat:10.8926, lng:78.8534, icon:'🚌', title:'Bus Stop', desc:'Where I first talked to you. Aug 17 will never leave my head.' },
+  { lat:10.8921, lng:78.8540, icon:'📚', title:'Central Library', desc:'Our place. Just us, in the quiet. That was always enough.' },
+  { lat:10.8929, lng:78.8542, icon:'🍴', title:'Arts Canteen', desc:'Our first photo together. August 17.' },
+  { lat:10.8923, lng:78.8530, icon:'🏪', title:'Departmental Store', desc:'"We can buy this biryani!" — Every. Single. Time. 😄' },
+  { lat:10.8918, lng:78.8538, icon:'💕', title:'SRM Arts & Science', desc:'Where fate decided to put us in the same place at the same time.' },
+];
+
+places.forEach(p => {
+  L.marker([p.lat, p.lng], {icon: makeIcon(p.icon)})
+    .addTo(map)
+    .bindPopup(`<b style="font-family:serif;font-size:15px">${p.icon} ${p.title}</b><br><span style="font-style:italic;color:#9070a0;font-size:13px">${p.desc}</span>`, {maxWidth:220});
+});
+
+// SECRET PASSWORD
+function checkSecret() {
+  const val = document.getElementById('secretInput').value.trim().toLowerCase();
+  const wrong = document.getElementById('wrongMsg');
+  const reveal = document.getElementById('secretReveal');
+  if(val === 'alagi') {
+    wrong.classList.remove('show');
+    reveal.classList.add('open');
+    document.getElementById('secretInput').disabled = true;
+  } else {
+    wrong.classList.add('show');
+    document.getElementById('secretInput').value = '';
+    setTimeout(()=>wrong.classList.remove('show'), 2500);
+  }
+}
+document.getElementById('secretInput').addEventListener('keydown', e => { if(e.key==='Enter') checkSecret(); });
+
+</script>
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
@@ -185,6 +283,57 @@ footer p { font-style:italic; color:var(--soft); font-size:17px; letter-spacing:
 footer .heart { color:var(--pink); }
 footer .name-tag { margin-top:12px; font-size:12px; letter-spacing:5px; text-transform:uppercase; color:var(--lav); }
 
+
+/* SECRET MESSAGE */
+#secret { padding:48px 20px; background:linear-gradient(180deg,transparent,rgba(200,168,240,0.2),transparent); }
+.secret-box { max-width:600px; margin:0 auto; text-align:center; }
+.lock-icon { font-size:56px; margin-bottom:16px; animation:lockBounce 2s ease-in-out infinite; display:block; }
+@keyframes lockBounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+.secret-hint { font-style:italic; color:var(--soft); font-size:16px; margin-bottom:28px; line-height:1.7; }
+.secret-input-wrap { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:16px; }
+.secret-input {
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px; padding:12px 24px;
+  border:2px solid var(--pink); border-radius:50px;
+  background:rgba(255,248,252,0.9); color:var(--text);
+  outline:none; text-align:center; letter-spacing:3px;
+  transition:border-color 0.3s, box-shadow 0.3s;
+  width:200px;
+}
+.secret-input:focus { border-color:var(--lav); box-shadow:0 0 20px rgba(184,160,232,0.3); }
+.secret-btn {
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px; padding:12px 28px;
+  background:linear-gradient(135deg,var(--pink),var(--lav));
+  color:#fff; border:none; border-radius:50px;
+  cursor:pointer; letter-spacing:2px;
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.secret-btn:hover { transform:scale(1.04); box-shadow:0 8px 24px rgba(180,80,160,0.3); }
+.secret-wrong { color:#e06080; font-size:14px; margin-top:8px; opacity:0; transition:opacity 0.3s; font-style:italic; }
+.secret-wrong.show { opacity:1; }
+.secret-reveal {
+  max-height:0; overflow:hidden; opacity:0;
+  transition:max-height 1.2s ease, opacity 0.8s ease 0.4s;
+}
+.secret-reveal.open { max-height:600px; opacity:1; }
+.secret-message {
+  background:rgba(255,248,252,0.95);
+  border:1px solid #f0d0ec; border-radius:16px;
+  padding:36px 32px; margin-top:24px;
+  box-shadow:0 12px 40px rgba(180,80,160,0.12);
+  font-size:18px; line-height:2; font-style:italic;
+  color:var(--text); text-align:left;
+}
+.secret-message .unlock-tag { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--pink); display:block; margin-bottom:16px; font-style:normal; }
+
+/* MAP */
+#map-section { padding:48px 20px; background:var(--bg2); }
+.map-inner { max-width:900px; margin:0 auto; }
+#ourMap { width:100%; height:420px; border-radius:16px; border:2px solid #f0d0ec; box-shadow:0 12px 40px rgba(180,80,160,0.12); }
+.map-legend { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; justify-content:center; }
+.legend-item { display:flex; align-items:center; gap:8px; font-size:14px; color:var(--soft); font-style:italic; background:rgba(255,248,252,0.9); padding:8px 16px; border-radius:50px; border:1px solid #f0d0ec; }
+
 /* REVEAL */
 .reveal { opacity:0; transform:translateY(40px); transition:opacity 0.9s ease,transform 0.9s ease; }
 .reveal.on { opacity:1; transform:translateY(0); }
@@ -333,6 +482,49 @@ footer .name-tag { margin-top:12px; font-size:12px; letter-spacing:5px; text-tra
   </div>
 </section>
 
+
+<!-- SECRET MESSAGE -->
+<section id="secret">
+  <div class="section-inner">
+    <span class="sec-label reveal">✦ Only for you</span>
+    <h2 class="sec-title reveal">A Secret, Just for Shreya</h2>
+    <div class="secret-box reveal">
+      <span class="lock-icon">🔐</span>
+      <p class="secret-hint">There's something I could never say out loud.<br>Type what I call you to unlock it. 🌸</p>
+      <div class="secret-input-wrap">
+        <input class="secret-input" id="secretInput" type="text" placeholder="what I call you..." maxlength="20" autocomplete="off"/>
+        <button class="secret-btn" onclick="checkSecret()">Unlock</button>
+      </div>
+      <p class="secret-wrong" id="wrongMsg">hmm... that's not it 🌸</p>
+      <div class="secret-reveal" id="secretReveal">
+        <div class="secret-message">
+          <span class="unlock-tag">✦ only for my Alagi ✦</span>
+          <p>You are always my Alagi. 🤍</p>
+          <br>
+          <p>No matter how much we fight, no matter what happens — that never changes.</p>
+          <br>
+          <p>Always. Only. My Alagi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PLACES MAP -->
+<section id="map-section">
+  <div class="map-inner">
+    <span class="sec-label reveal">✦ Our places</span>
+    <h2 class="sec-title reveal">Where It All Happened</h2>
+    <div id="ourMap"></div>
+    <div class="map-legend">
+      <div class="legend-item">🚌 Bus Stop — where it began</div>
+      <div class="legend-item">📚 Central Library — our place</div>
+      <div class="legend-item">🍴 Arts Canteen — first photo</div>
+      <div class="legend-item">🏪 Departmental Store — biryani drama</div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>Made with every bit of love I have <span class="heart">♥</span></p>
   <p class="name-tag">— Shreya Prasath —</p>
@@ -378,6 +570,53 @@ document.getElementById('playCover').addEventListener('click',function(){this.cl
 const revealEls=document.querySelectorAll('.reveal');
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:0.12});
 revealEls.forEach(r=>io.observe(r));
+
+// MAP — SRM Arts & Science College, Trichy
+const map = L.map('ourMap', { zoomControl:true, scrollWheelZoom:false }).setView([10.8924, 78.8537], 17);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution:'© OpenStreetMap',
+  maxZoom:19
+}).addTo(map);
+
+function makeIcon(emoji) {
+  return L.divIcon({
+    html:`<div style="font-size:28px;line-height:1;filter:drop-shadow(0 2px 6px rgba(180,80,160,0.4))">${emoji}</div>`,
+    iconSize:[36,36], iconAnchor:[18,18], popupAnchor:[0,-20],
+    className:''
+  });
+}
+
+const places = [
+  { lat:10.8926, lng:78.8534, icon:'🚌', title:'Bus Stop', desc:'Where I first talked to you. Aug 17 will never leave my head.' },
+  { lat:10.8921, lng:78.8540, icon:'📚', title:'Central Library', desc:'Our place. Just us, in the quiet. That was always enough.' },
+  { lat:10.8929, lng:78.8542, icon:'🍴', title:'Arts Canteen', desc:'Our first photo together. August 17.' },
+  { lat:10.8923, lng:78.8530, icon:'🏪', title:'Departmental Store', desc:'"We can buy this biryani!" — Every. Single. Time. 😄' },
+  { lat:10.8918, lng:78.8538, icon:'💕', title:'SRM Arts & Science', desc:'Where fate decided to put us in the same place at the same time.' },
+];
+
+places.forEach(p => {
+  L.marker([p.lat, p.lng], {icon: makeIcon(p.icon)})
+    .addTo(map)
+    .bindPopup(`<b style="font-family:serif;font-size:15px">${p.icon} ${p.title}</b><br><span style="font-style:italic;color:#9070a0;font-size:13px">${p.desc}</span>`, {maxWidth:220});
+});
+
+// SECRET PASSWORD
+function checkSecret() {
+  const val = document.getElementById('secretInput').value.trim().toLowerCase();
+  const wrong = document.getElementById('wrongMsg');
+  const reveal = document.getElementById('secretReveal');
+  if(val === 'alagi') {
+    wrong.classList.remove('show');
+    reveal.classList.add('open');
+    document.getElementById('secretInput').disabled = true;
+  } else {
+    wrong.classList.add('show');
+    document.getElementById('secretInput').value = '';
+    setTimeout(()=>wrong.classList.remove('show'), 2500);
+  }
+}
+document.getElementById('secretInput').addEventListener('keydown', e => { if(e.key==='Enter') checkSecret(); });
+
 </script>
 </body>
 </html>
