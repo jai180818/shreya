@@ -26,7 +26,7 @@ html = f"""
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after {{ margin:0; padding:0; box-sizing:border-box; }}
 :root {{
@@ -102,7 +102,7 @@ section {{ position: relative; z-index:2; }}
   animation: rise 1.2s ease both;
 }}
 .big-name {{
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: clamp(80px, 20vw, 180px);
   font-weight: 700; line-height: 0.88;
   letter-spacing: -3px;
