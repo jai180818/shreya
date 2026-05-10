@@ -60,22 +60,22 @@ body { font-family: 'Cormorant Garamond', serif; background: var(--bg); color: v
 section { position:relative; z-index:2; }
 
 /* INTRO */
-#intro { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:60px 24px; }
+#intro { min-height:70vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px 24px; }
 .tag { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:var(--pink); margin-bottom:28px; animation:rise 1.2s ease both; }
-.big-name { font-family:'DM Serif Display', serif; font-size:clamp(80px,20vw,180px); font-weight:700; line-height:0.88; letter-spacing:-3px; background:linear-gradient(135deg,#c060a0 0%,#8050c8 50%,#e060a8 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:rise 1.2s ease 0.2s both; }
+.big-name { font-family:'DM Serif Display', serif; font-size:clamp(60px,15vw,130px); font-weight:700; line-height:0.88; letter-spacing:-3px; background:linear-gradient(135deg,#c060a0 0%,#8050c8 50%,#e060a8 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:rise 1.2s ease 0.2s both; }
 .divider { width:80px; height:1px; background:linear-gradient(90deg,transparent,var(--pink),transparent); margin:36px auto; animation:rise 1.2s ease 0.5s both; }
-.typewriter-wrap { font-size:clamp(18px,3.5vw,26px); font-style:italic; color:var(--soft); max-width:540px; line-height:1.8; min-height:80px; animation:rise 1.2s ease 0.8s both; }
+.typewriter-wrap { font-size:clamp(18px,3.5vw,26px); font-style:italic; color:var(--soft); max-width:540px; line-height:1.8; min-height:56px; animation:rise 1.2s ease 0.8s both; }
 #typeText { border-right:2px solid var(--pink); padding-right:2px; }
-.scroll-down { margin-top:72px; display:flex; flex-direction:column; align-items:center; gap:10px; animation:rise 1.2s ease 1.2s both; }
+.scroll-down { margin-top:24px; display:flex; flex-direction:column; align-items:center; gap:10px; animation:rise 1.2s ease 1.2s both; }
 .scroll-down span { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--pink); }
 .scroll-line { width:1px; height:60px; background:linear-gradient(to bottom,var(--pink),transparent); animation:pulse 2s ease infinite; }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.2; } }
 @keyframes rise { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
 
 /* LETTER */
-#letter { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:80px 24px; background:linear-gradient(180deg,transparent,rgba(248,240,255,0.6),transparent); }
+#letter { min-height:70vh; display:flex; align-items:center; justify-content:center; padding:48px 20px; background:linear-gradient(180deg,transparent,rgba(248,240,255,0.6),transparent); }
 .letter-wrap { max-width:700px; width:100%; }
-.sec-label { display:block; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--pink); margin-bottom:48px; }
+.sec-label { display:block; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--pink); margin-bottom:28px; }
 .env-outer { max-width:460px; margin:0 auto 40px; cursor:pointer; perspective:1200px; }
 .env-box { position:relative; width:100%; height:290px; transform-style:preserve-3d; transition:transform 0.15s ease; }
 .env-outer:hover .env-box { transform:scale(1.015); }
@@ -92,22 +92,22 @@ section { position:relative; z-index:2; }
 .letter-reveal { max-height:0; overflow:hidden; opacity:0; transition:max-height 1.5s ease,opacity 0.9s ease 0.5s; }
 .letter-reveal.show { max-height:4000px; opacity:1; }
 .letter-paper { background:var(--cream); border:1px solid #f0d8ec; border-radius:4px; padding:clamp(32px,6vw,64px); box-shadow:0 8px 40px rgba(180,80,160,0.07); font-size:clamp(17px,3vw,20px); line-height:2; font-weight:300; }
-.letter-paper p { margin-bottom:22px; }
+.letter-paper p { margin-bottom:14px; }
 .salutation { font-style:italic; font-size:clamp(22px,4vw,30px); margin-bottom:32px; }
-.sign-off { margin-top:40px; font-style:italic; color:var(--soft); }
+.sign-off { margin-top:24px; font-style:italic; color:var(--soft); }
 .poem { margin:36px 0; padding:28px 32px; background:linear-gradient(135deg,rgba(240,192,232,0.2),rgba(200,168,240,0.15)); border-left:3px solid var(--pink); border-radius:0 6px 6px 0; }
 .poem .tamil { font-style:italic; line-height:2.3; margin-bottom:16px; }
 .poem .tl { font-size:clamp(13px,2vw,15px); color:var(--soft); line-height:2; font-style:italic; }
 
 /* SONG */
-#song { min-height:60vh; display:flex; align-items:center; justify-content:center; padding:80px 24px; }
+#song { min-height:auto; display:flex; align-items:center; justify-content:center; padding:48px 20px; }
 .song-wrap { max-width:700px; width:100%; }
 .song-card { background:rgba(255,248,252,0.85); border:1px solid #f0d0e8; border-radius:12px; overflow:hidden; box-shadow:0 16px 50px rgba(180,80,160,0.1); backdrop-filter:blur(16px); }
-.song-head { padding:32px 36px; display:flex; align-items:center; gap:20px; }
+.song-head { padding:20px 24px; display:flex; align-items:center; gap:20px; }
 .note-icon { font-size:40px; }
 .song-title { font-family:'DM Serif Display', serif; font-size:clamp(20px,3.5vw,28px); font-weight:600; margin-bottom:4px; }
 .song-sub { font-size:13px; color:var(--soft); letter-spacing:2px; text-transform:uppercase; }
-.song-caption { padding:0 36px 28px; font-style:italic; color:var(--soft); line-height:1.8; font-size:15px; }
+.song-caption { padding:0 24px 20px; font-style:italic; color:var(--soft); line-height:1.8; font-size:15px; }
 .video-wrap { position:relative; background:linear-gradient(135deg,#2a1040,#1a0830); }
 .video-wrap iframe { display:block; width:100%; aspect-ratio:16/9; border:none; }
 .play-cover { position:absolute; inset:0; background:rgba(80,20,80,0.45); display:flex; align-items:center; justify-content:center; transition:opacity 0.3s; cursor:pointer; }
@@ -117,7 +117,7 @@ section { position:relative; z-index:2; }
 .play-circle svg { width:30px; height:30px; fill:#3a1f3a; margin-left:5px; }
 
 /* PHOTO */
-#photo { min-height:80vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 24px; background:linear-gradient(180deg,transparent,rgba(248,240,255,0.5),transparent); }
+#photo { min-height:auto; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:48px 20px; background:linear-gradient(180deg,transparent,rgba(248,240,255,0.5),transparent); }
 .photo-wrap { max-width:560px; width:100%; text-align:center; }
 .photo-glow { display:inline-block; border-radius:4px; animation:glowPulse 4s ease-in-out infinite alternate; }
 @keyframes glowPulse { 0% { box-shadow:0 0 40px rgba(232,136,176,0.25),0 0 80px rgba(184,160,232,0.15),0 20px 60px rgba(60,20,60,0.12); } 100% { box-shadow:0 0 80px rgba(232,136,176,0.45),0 0 160px rgba(184,160,232,0.3),0 20px 60px rgba(60,20,60,0.18); } }
@@ -132,9 +132,9 @@ section { position:relative; z-index:2; }
 .fc-br { bottom:44px; right:6px; border-bottom:2px solid var(--pink); border-right:2px solid var(--pink); }
 
 /* GALLERY */
-#gallery { padding:80px 24px; background:linear-gradient(180deg,transparent,rgba(240,200,232,0.2),transparent); }
+#gallery { padding:48px 20px; background:linear-gradient(180deg,transparent,rgba(240,200,232,0.2),transparent); }
 .section-inner { max-width:900px; margin:0 auto; }
-.sec-title { font-family:'DM Serif Display', serif; font-size:clamp(28px,5vw,44px); margin-bottom:48px; color:var(--text); }
+.sec-title { font-family:'DM Serif Display', serif; font-size:clamp(28px,5vw,44px); margin-bottom:28px; color:var(--text); }
 .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
 .mem-card { border-radius:12px; overflow:hidden; background:var(--cream); box-shadow:0 8px 30px rgba(180,80,160,0.1); transition:transform 0.3s ease; }
 .mem-card:hover { transform:translateY(-6px); }
@@ -147,31 +147,31 @@ section { position:relative; z-index:2; }
 .mem-date { text-align:center; padding:14px; font-style:italic; color:var(--soft); font-size:14px; letter-spacing:1px; }
 
 /* THINGS I REMEMBER */
-#remember { padding:80px 24px; background:var(--bg2); }
+#remember { padding:48px 20px; background:var(--bg2); }
 .memory-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
-.memory-item { background:rgba(255,248,252,0.9); border:1px solid #f0d8ec; border-radius:16px; padding:32px 28px; backdrop-filter:blur(12px); box-shadow:0 8px 30px rgba(180,80,160,0.07); transition:transform 0.3s ease,box-shadow 0.3s ease; }
+.memory-item { background:rgba(255,248,252,0.9); border:1px solid #f0d8ec; border-radius:16px; padding:22px 20px; backdrop-filter:blur(12px); box-shadow:0 8px 30px rgba(180,80,160,0.07); transition:transform 0.3s ease,box-shadow 0.3s ease; }
 .memory-item:hover { transform:translateY(-5px); box-shadow:0 16px 50px rgba(180,80,160,0.14); }
 .mem-icon { font-size:36px; margin-bottom:16px; display:block; }
 .memory-item h3 { font-family:'DM Serif Display', serif; font-size:20px; margin-bottom:12px; }
 .memory-item p { font-size:15px; line-height:1.85; color:var(--soft); font-weight:300; }
 
 /* FLIP CARDS */
-#reasons { padding:80px 24px; background:linear-gradient(180deg,transparent,rgba(200,168,240,0.15),transparent); }
+#reasons { padding:48px 20px; background:linear-gradient(180deg,transparent,rgba(200,168,240,0.15),transparent); }
 .reasons-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px; }
-.flip-card { height:200px; perspective:1000px; cursor:pointer; }
+.flip-card { height:160px; perspective:1000px; cursor:pointer; }
 .flip-inner { width:100%; height:100%; position:relative; transform-style:preserve-3d; transition:transform 0.7s cubic-bezier(0.4,0.2,0.2,1); }
 .flip-card.flipped .flip-inner { transform:rotateY(180deg); }
 .flip-front, .flip-back { position:absolute; inset:0; border-radius:16px; display:flex; align-items:center; justify-content:center; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
 .flip-front { background:linear-gradient(135deg,#f4d0ec,#e0c0f0); border:1px solid #f0c0e8; box-shadow:0 8px 30px rgba(180,80,160,0.1); }
 .flip-back { background:linear-gradient(135deg,#e8b8e0,#c8a0e8); transform:rotateY(180deg); padding:24px; }
-.flip-num { font-family:'DM Serif Display', serif; font-size:48px; color:rgba(60,20,60,0.25); font-style:italic; }
+.flip-num { font-family:'DM Serif Display', serif; font-size:36px; color:rgba(60,20,60,0.25); font-style:italic; }
 .flip-back p { font-style:italic; color:#fff; font-size:14px; line-height:1.8; text-align:center; }
 
 /* TIMELINE */
-#timeline { padding:80px 24px; background:var(--bg2); }
+#timeline { padding:48px 20px; background:var(--bg2); }
 .tl-wrap { position:relative; padding-left:40px; max-width:700px; }
 .tl-wrap::before { content:''; position:absolute; left:8px; top:8px; bottom:8px; width:2px; background:linear-gradient(to bottom,var(--pink),var(--lav),var(--pink)); }
-.tl-item { position:relative; margin-bottom:56px; padding-left:24px; }
+.tl-item { position:relative; margin-bottom:32px; padding-left:24px; }
 .tl-dot { position:absolute; left:-38px; top:6px; width:16px; height:16px; border-radius:50%; background:var(--pink); box-shadow:0 0 0 4px rgba(232,153,190,0.25),0 0 16px rgba(232,153,190,0.4); animation:dotGlow 3s ease-in-out infinite alternate; }
 .tl-dot-now { background:var(--lav); width:20px; height:20px; left:-40px; box-shadow:0 0 0 4px rgba(184,160,232,0.25),0 0 16px rgba(184,160,232,0.5); }
 @keyframes dotGlow { 0% { box-shadow:0 0 0 4px rgba(232,153,190,0.2),0 0 8px rgba(232,153,190,0.3); } 100% { box-shadow:0 0 0 6px rgba(232,153,190,0.3),0 0 24px rgba(232,153,190,0.5); } }
@@ -180,7 +180,7 @@ section { position:relative; z-index:2; }
 .tl-item p { font-size:15px; line-height:1.9; color:var(--soft); font-weight:300; max-width:600px; }
 
 /* FOOTER */
-footer { text-align:center; padding:60px 24px 50px; background:linear-gradient(to bottom,transparent,rgba(240,200,232,0.2)); }
+footer { text-align:center; padding:36px 24px 32px; background:linear-gradient(to bottom,transparent,rgba(240,200,232,0.2)); }
 footer p { font-style:italic; color:var(--soft); font-size:17px; letter-spacing:1px; }
 footer .heart { color:var(--pink); }
 footer .name-tag { margin-top:12px; font-size:12px; letter-spacing:5px; text-transform:uppercase; color:var(--lav); }
@@ -224,7 +224,7 @@ footer .name-tag { margin-top:12px; font-size:12px; letter-spacing:5px; text-tra
         <p class="salutation">Dear Shreya,</p>
         <p>I noticed you long before you ever noticed me. From the day you walked into college, I kept finding reasons to just… look.</p>
         <p>Then came that day at the bus stop. I saw you waiting, and I knew — if I walked away, I'd lose my only chance. So I walked up, heart going crazy, and said the most random thing just to have a reason to talk to you. And then you looked at me.</p>
-        <p>Shreya, those eyes. That blue. The moment I saw them, I was gone.</p>
+        <p>Shreya, those eyes. The moment I saw them, I was gone.</p>
         <div class="poem">
           <div class="tamil">நீ பார்த்த நொடியிலே நேரம் நின்றது,<br>உன் கண்ணிலே உலகம் தெரிந்தது,<br>என்ன சொன்னாய் தெரியவில்லை —<br>உன் பார்வையே போதும் என்று மனசு கொண்டது.</div>
           <div class="tl">The moment you looked, time stood still,<br>In your eyes I saw the whole world,<br>I couldn't hear a word you said —<br>My heart decided your gaze was enough.</div>
@@ -235,7 +235,7 @@ footer .name-tag { margin-top:12px; font-size:12px; letter-spacing:5px; text-tra
           <div class="tamil">சின்னப் பொண்ணு மாதிரி சண்டை போடுவாய்,<br>ஆனாலும் உன்னை பார்க்கும் போது<br>எனக்கு தெரியும் —<br>இந்த சண்டையும் நான் தோற்கவே விரும்புகிறேன்.</div>
           <div class="tl">You fight like a little girl,<br>But every time I look at you I know —<br>Even this fight, I want to lose.</div>
         </div>
-        <p>I've scolded you too. More than I should have. But you're still here — simple, pure, papom that you are. Anyone else would've left.</p>
+        <p>I've scolded you too. More than I should have. But you're still here — simple, pure. Anyone else would've left.</p>
         <p>You've made a hole in my future, Shreya. I don't think I know how to fill it with anyone else.</p>
         <p class="sign-off">— Yours, always 🤍</p>
       </div>
@@ -310,11 +310,11 @@ footer .name-tag { margin-top:12px; font-size:12px; letter-spacing:5px; text-tra
       <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">01</span></div><div class="flip-back"><p>She feels like home. Being with her is the safest place I know.</p></div></div></div>
       <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">02</span></div><div class="flip-back"><p>Her vanilla perfume. The most comforting scent in the world to me.</p></div></div></div>
       <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">03</span></div><div class="flip-back"><p>The biryani face she makes in the store. I would buy her all of it.</p></div></div></div>
-      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">04</span></div><div class="flip-back"><p>She's still here. Anyone else would have left. She stayed — simple, pure, papom.</p></div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">04</span></div><div class="flip-back"><p>She's still here. Anyone else would have left. She stayed — simple and pure.</p></div></div></div>
       <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">05</span></div><div class="flip-back"><p>When she acts like a little girl — stubborn and soft at the same time. I'd never trade that.</p></div></div></div>
       <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">06</span></div><div class="flip-back"><p>She made me brave enough to walk up and ask her name. That took everything I had.</p></div></div></div>
       <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">07</span></div><div class="flip-back"><p>The Central Library. She turned a quiet room into our own little world.</p></div></div></div>
-      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">08</span></div><div class="flip-back"><p>Those blue eyes. The moment I saw them, I was completely gone.</p></div></div></div>
+      <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><span class="flip-num">08</span></div><div class="flip-back"><p>Those eyes. The moment I saw them, I was completely gone.</p></div></div></div>
     </div>
   </div>
 </section>
